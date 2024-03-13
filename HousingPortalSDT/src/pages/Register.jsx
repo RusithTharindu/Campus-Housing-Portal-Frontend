@@ -4,14 +4,14 @@ const Register = () => {
         <div className="h-screen w-screen bg-[#111111] flex justify-center items-center">
             <div className=" w-[500px] h-[650px] rounded-[20px] flex flex-col items-center justify-center bg-[rgba(0,0,0,0.6)]">
                 <div className=" flex flex-col items-center">
-                    <img src="src\assets\logo1.png" className="h-[80px] mb-[15px]" />
+                    <img src="src/assets/logo1.png" className="h-[80px] mb-[15px]" />
                     <p className="text-[25px] font-semibold text-white mb-[5px]">Welcome to [Project Name]</p>
                     <p className="text-[rgba(255,255,255,0.3)] text-[15px] font-[300]">Please fill the below form to register</p>
                 </div>
                 <form action="">
                     <div className="w-[400px] mt-[20px]">
                         <p className="text-white font-semibold text-[15px] mb-[5px]">Select Your Role</p>
-                        <select className="bg-[#20242D] w-[100%] h-[40px] rounded-[10px] pl-[15px] text-[#ffffffc4] mb-[15px]" >
+                        <select className="bg-[#20242D] w-[100%] h-[40px] rounded-[10px] px-[15px] text-[#ffffffc4] mb-[15px]" >
                             <option value="student">Student</option>
                             <option value="warden">Warden</option>
                             <option value="landlord">Hostel Owner</option>
