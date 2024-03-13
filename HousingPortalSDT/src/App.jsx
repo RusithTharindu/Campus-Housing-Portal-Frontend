@@ -3,6 +3,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AcceptBtn from './components/AcceptBtn'
 import RejectBtn from './components/RejectBtn'
+import Home from './pages/Home';
 
 function App() {
   return(
@@ -11,6 +12,9 @@ function App() {
         <AcceptBtn/>
         <RejectBtn/>
       </div>
+      <Login/>
+      {/* <Register/> */}
+      
     </>
   )
 }
