@@ -8,7 +8,7 @@ export default function Container({ children }) {
             px-4
             sm:px-6
             md:px-10
-            lg:px-20
+            lg:px-10
         `}
     >
       {children}
