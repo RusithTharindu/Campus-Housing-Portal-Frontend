@@ -1,5 +1,5 @@
-import Container from '../components/container/container'
-import EmptyRegistration from '../components/EmptyRegistration'
+import Container from '../../components/container/container';
+import EmptyRegistration from '../../components/EmptyRegistration';
 
 const Landlord = () => {
     return(
