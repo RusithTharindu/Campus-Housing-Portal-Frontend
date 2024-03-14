@@ -9,8 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'lightGrey': '#D9D9D9', 
+        'lightGrey': '#D2D2D2', 
+        'grey1': '#6B6B6B',
         'black1': '#252525',
+        
       },
     },
   },
