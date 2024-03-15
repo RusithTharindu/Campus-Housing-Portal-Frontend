@@ -2,7 +2,6 @@ import Container from "../components/container/container";
 
 const Login = () => {
     return (
-        <Container>
         <div className="h-screen w-screen bg-[#000000] flex justify-center items-center">
             <div className="border-[#ffffff] border w-[500px] h-[600px] rounded-[20px] flex flex-col items-center justify-center bg-black">
                 <div className="flex flex-col items-center ">
@@ -30,7 +29,6 @@ const Login = () => {
                 <p className="text-[#93A0B9] mt-[15px] font-regular">Don't have an account? <a href="#" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign up</a></p>
             </div>
         </div>
-        </Container>
     ) 
 }
 
