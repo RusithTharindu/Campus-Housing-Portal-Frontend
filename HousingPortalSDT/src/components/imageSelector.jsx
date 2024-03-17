@@ -3,7 +3,7 @@
 
 // function DragDropImageloader() {
 //   const [images, setImages] = useState([]);
-//   const [isDragging, setIsDragging] = useState(false);  
+//   const [isDragging, setIsDragging] = useState(false);
 //   const fileInputRef = useRef(null);
 
 //   function selectFiles(){
@@ -19,9 +19,9 @@
 //            <>
 //            Drag & Drop image here or {" "}
 //         <span className=" select" role="button" >Browse</span>
-//            </> 
+//            </>
 // )}
-        
+
 //         <input name="file" type="file" className="file" multiple ref={fileInputRef} ></input>
 //       </div>
 //       <div className="container">
@@ -37,52 +37,86 @@
 
 // export default DragDropImageloader;
 
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 
 function DragDropImageloader() {
   const [images, setImages] = useState([]);
-  const [isDragging, setIsDragging] = useState(false);  
+  const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
 
-  function selectFiles(){
+  function selectFiles() {
     fileInputRef.current.click();
   }
 
+  function onFileSelect(event) {
+    const files = event.target.files;
+    if (files.length === 0) return;
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].type.split("/")[0] !== "image") continue;
+      if (images.some((e) => e.name === files[i].name)) {
+        setImages((prevImages) => [
+          ...prevImages,
+          {
+            name: files[i].name,
+            url: URL.createObjectURL(files[i]),
+          },
+        ]);
+      }
+    }
+  }
+
   return (
-    <div className="p-4 shadow-md rounded overflow-hidden cursor-pointer" onClick={selectFiles}>
-      <div className="h-36 rounded border-2 border-dashed text-gray-700 bg-gray-700 flex items-center justify-center mt-4">
+    <div className="justify-between w-full h-full border rounded cursor-pointer">
+      <div
+        className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-xl bg-lightGrey h-[300px] w-full"
+        onClick={selectFiles}
+      >
         {isDragging ? (
           <span className="text-lg">Drop Images here</span>
         ) : (
           <>
-            Drag & Drop image here or {" "}
-            <span className="text-black ml-1 cursor-pointer transition-opacity duration-400 hover:opacity-60" role="button">Browse</span>
+            <span
+              className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:opacity-60"
+              role="button"
+            >
+              Add Photo+
+            </span>
           </>
         )}
-        <input name="file" type="file" className="hidden" multiple ref={fileInputRef} />
+        <input
+          name="file"
+          type="file"
+          className="hidden file"
+          multiple
+          ref={fileInputRef}
+          onChange={onFileSelect}
+        />
       </div>
-      <div className="w-full h-auto flex items-start justify-start flex-wrap overflow-y-auto mt-4">
-        <div className="w-18 mr-1 h-18 relative mb-2">
-          <span className="absolute top-[-0.5] right-2 text-lg cursor-pointer z-50">&times;</span>
-          <img className="w-full h-full rounded" src="" alt="" />
-        </div>
+      <div className="container flex flex-wrap items-start justify-start w-full h-auto mt-4 overflow-y-auto">
+        {images.map((image, index) => (
+          <div className="relative mb-2 mr-1 border border-2 image w-18 h-18 " key={index}>
+            <span className="delete absolute top-[-0.5] right-2 text-lg cursor-pointer z-50">
+              &times;
+            </span>
+            <img
+              className="w-full h-full rounded"
+              src={image.url}
+              alt={image.name}
+            />
+          </div>
+        ))}
       </div>
-      <button type="button" className="w-full bg-gray-700 text-white rounded py-2 mt-4 cursor-pointer">Upload</button>
+      <button
+        type="button"
+        className="w-full py-2 mt-4 text-white bg-blue-600 rounded cursor-pointer"
+      >
+        Upload
+      </button>
     </div>
   );
 }
 
 export default DragDropImageloader;
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useRef} from "react";
 
@@ -100,8 +134,9 @@ export default DragDropImageloader;
 
 //   }
 //   return (
-//     <div className="photouploadcard flex flex-col w-full border border-red-600   ">
-      {/* <div className="card1 bg-lightGrey flex  items-center justify-center h-[200px] md:h-[350px] rounded-[32px] mt-4">
+//     <div className="flex flex-col w-full border border-red-600 photouploadcard ">
+{
+  /* <div className="card1 bg-lightGrey flex  items-center justify-center h-[200px] md:h-[350px] rounded-[32px] mt-4">
       <input name="file" type="file" className="file"></input>
 
 <div className="container">
@@ -115,11 +150,15 @@ export default DragDropImageloader;
         {/* <img
             src="path-to-your-image"
             alt="Add Photo+"
-            className="w-full h-full object-cover"
-          /> */}
-        {/* <p className=" text-white text-xl">Add photo+</p>
-      </div> */} 
-{/* 
+            className="object-cover w-full h-full"
+          /> */
+}
+{
+  /* <p className="text-xl text-white ">Add photo+</p>
+      </div> */
+}
+{
+  /* 
 <div 
   className="drag-area card1 bg-lightGrey flex items-center justify-center h-[200px] md:h-[350px] rounded-[32px] mt-4 cursor-pointer" 
   // onClick={() => document.getElementById('fileInput').click()}
@@ -138,7 +177,7 @@ export default DragDropImageloader;
     id="fileInput" 
     name="file" 
     type="file"
-    className=" hidden"
+    className="hidden "
     multiple ref={fileInputRef}
     onChange={onFileSelect}
   >
@@ -153,28 +192,41 @@ export default DragDropImageloader;
 
   <button type="button" className="hidden">Upload</button>
 
-  <p className="text-white text-xl " onClick={selectFiles}>Add photo+</p>
-</div> */}
-      {/* <div className="flex flex-col md:flex-row justify-between text-center items-center md:max-w-full h-[400px] md:h-[220px] gap-4 mt-4 mb-0 lg:mb-4">
-        <div className="card2 bg-lightGrey w-full h-full flex items-center justify-center  rounded-[20px]"> */}
-          {/* <img
+  <p className="text-xl text-white " onClick={selectFiles}>Add photo+</p>
+</div> */
+}
+{
+  /* <div className="flex flex-col md:flex-row justify-between text-center items-center md:max-w-full h-[400px] md:h-[220px] gap-4 mt-4 mb-0 lg:mb-4">
+        <div className="card2 bg-lightGrey w-full h-full flex items-center justify-center  rounded-[20px]"> */
+}
+{
+  /* <img
               src="path-to-your-image"
               alt=""
-              className="w-full h-full object-cover"
-            /> */}
-          {/* <p className=" text-white text-lg">Add photo+</p>
+              className="object-cover w-full h-full"
+            /> */
+}
+{
+  /* <p className="text-lg text-white ">Add photo+</p>
         </div>
-        <div className="card3 bg-lightGrey w-full h-full flex items-center justify-center  rounded-[20px]"> */}
-          {/* <img
+        <div className="card3 bg-lightGrey w-full h-full flex items-center justify-center  rounded-[20px]"> */
+}
+{
+  /* <img
               src="path-to-your-image"
               alt="Add Photo+"
-              className="w-full h-full object-cover"
-            /> */}
-          {/* <p className=" text-white text-lg">Add photo+</p>
+              className="object-cover w-full h-full"
+            /> */
+}
+{
+  /* <p className="text-lg text-white ">Add photo+</p>
         </div>
-      </div> */}
-    {/* </div>
+      </div> */
+}
+{
+  /* </div>
   );
 };
 
-export default imageSelector; */}
+export default imageSelector; */
+}
