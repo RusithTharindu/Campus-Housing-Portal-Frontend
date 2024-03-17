@@ -30,17 +30,48 @@ function DragDropImageloader() {
     setImages((prevImages) => prevImages.filter((_, i) => i !== index));
   }
 
+  function onDragOver(event) {
+    event.preventDefault();
+    setIsDragging(true);
+    event.dataTransfer.dropEffect = "copy";
+  }
+
+  function onDragLeave(event) {
+    event.preventDefault();
+    setIsDragging(false);
+  }
+
+  function onDrop(event) {
+    event.preventDefault();
+    setIsDragging(false);
+    const files = event.dataTransfer.files;
+    if (files.length === 0) return;
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].type.split("/")[0] !== "image") continue;
+      if (!images.some((e) => e.name === files[i].name)) {
+        setImages((prevImages) => [
+          ...prevImages,
+          {
+            name: files[i].name,
+            url: URL.createObjectURL(files[i]),
+          },
+        ]);
+      }
+    }
+  }
+
+
   return (
     <div className="justify-between w-full h-full border">
       <div
         className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightGrey h-[350px] w-full"
-        onClick={selectFiles}
+        onClick={selectFiles} onDragOver={onDragOver} onDragLeave={onDragLeave} onDrop={onDrop}
       >
         {isDragging ? (
           <span className="text-lg">Drop Images here</span>
         ) : (
           <span
-            className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:opacity-60 text-lg text-gray-600"
+            className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:text-white text-lg text-gray-600"
             role="button"
           >
             Add Photo+
@@ -75,9 +106,10 @@ function DragDropImageloader() {
           </div>
         ))}
       </div>
+    
       <button
         type="button"
-        className="w-[175px] py-2.5 mt-4 rounded-md text-white bg-blue-600 cursor-pointer"
+        className="bg-blue-600 text-white flex py-4 px-12 rounded-[5px] items-center mt-10"
       >
         Upload
       </button>
