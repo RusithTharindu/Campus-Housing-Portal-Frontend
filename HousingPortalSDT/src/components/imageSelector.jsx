@@ -1,42 +1,3 @@
-// import "../../src/App.css";
-// import React, {useState, useRef} from "react";
-
-// function DragDropImageloader() {
-//   const [images, setImages] = useState([]);
-//   const [isDragging, setIsDragging] = useState(false);
-//   const fileInputRef = useRef(null);
-
-//   function selectFiles(){
-//     fileInputRef.current.click();
-
-//   }
-//   return (
-//     <div className="card" onClick={selectFiles}>
-//       <div className="drag-area">
-//         {isDragging ? (
-//           <span className="seelct">Drop Images here</span>
-//         ) : (
-//            <>
-//            Drag & Drop image here or {" "}
-//         <span className=" select" role="button" >Browse</span>
-//            </>
-// )}
-
-//         <input name="file" type="file" className="file" multiple ref={fileInputRef} ></input>
-//       </div>
-//       <div className="container">
-//         <div className="image">
-//           <span className=" delete">&times;</span>
-//         </div>
-//         <img src="" alt="" />
-//       </div>
-//       <button type="button">Upload</button>
-//     </div>
-//   );
-// }
-
-// export default DragDropImageloader;
-
 import React, { useState, useRef } from "react";
 
 function DragDropImageloader() {
@@ -53,7 +14,7 @@ function DragDropImageloader() {
     if (files.length === 0) return;
     for (let i = 0; i < files.length; i++) {
       if (files[i].type.split("/")[0] !== "image") continue;
-      if (images.some((e) => e.name === files[i].name)) {
+      if (!images.some((e) => e.name === files[i].name)) {
         setImages((prevImages) => [
           ...prevImages,
           {
@@ -65,23 +26,25 @@ function DragDropImageloader() {
     }
   }
 
+  function deleteImage(index) {
+    setImages((prevImages) => prevImages.filter((_, i) => i !== index));
+  }
+
   return (
-    <div className="justify-between w-full h-full border rounded cursor-pointer">
+    <div className="justify-between w-full h-full border">
       <div
-        className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-xl bg-lightGrey h-[300px] w-full"
+        className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightGrey h-[350px] w-full"
         onClick={selectFiles}
       >
         {isDragging ? (
           <span className="text-lg">Drop Images here</span>
         ) : (
-          <>
-            <span
-              className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:opacity-60"
-              role="button"
-            >
-              Add Photo+
-            </span>
-          </>
+          <span
+            className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:opacity-60 text-lg text-gray-600"
+            role="button"
+          >
+            Add Photo+
+          </span>
         )}
         <input
           name="file"
@@ -94,8 +57,14 @@ function DragDropImageloader() {
       </div>
       <div className="container flex flex-wrap items-start justify-start w-full h-auto mt-4 overflow-y-auto">
         {images.map((image, index) => (
-          <div className="relative mb-2 mr-1 border border-2 image w-18 h-18 " key={index}>
-            <span className="delete absolute top-[-0.5] right-2 text-lg cursor-pointer z-50">
+          <div
+            key={index}
+            className="relative w-20 h-20 mb-2 mr-1 border-2 image"
+          >
+            <span
+              className="delete absolute top-[-0.5] right-2 text-lg cursor-pointer z-50"
+              onClick={() => deleteImage(index)}
+            >
               &times;
             </span>
             <img
@@ -108,7 +77,7 @@ function DragDropImageloader() {
       </div>
       <button
         type="button"
-        className="w-full py-2 mt-4 text-white bg-blue-600 rounded cursor-pointer"
+        className="w-[175px] py-2.5 mt-4 rounded-md text-white bg-blue-600 cursor-pointer"
       >
         Upload
       </button>
@@ -230,3 +199,42 @@ export default DragDropImageloader;
 
 export default imageSelector; */
 }
+
+// import "../../src/App.css";
+// import React, {useState, useRef} from "react";
+
+// function DragDropImageloader() {
+//   const [images, setImages] = useState([]);
+//   const [isDragging, setIsDragging] = useState(false);
+//   const fileInputRef = useRef(null);
+
+//   function selectFiles(){
+//     fileInputRef.current.click();
+
+//   }
+//   return (
+//     <div className="card" onClick={selectFiles}>
+//       <div className="drag-area">
+//         {isDragging ? (
+//           <span className="seelct">Drop Images here</span>
+//         ) : (
+//            <>
+//            Drag & Drop image here or {" "}
+//         <span className=" select" role="button" >Browse</span>
+//            </>
+// )}
+
+//         <input name="file" type="file" className="file" multiple ref={fileInputRef} ></input>
+//       </div>
+//       <div className="container">
+//         <div className="image">
+//           <span className=" delete">&times;</span>
+//         </div>
+//         <img src="" alt="" />
+//       </div>
+//       <button type="button">Upload</button>
+//     </div>
+//   );
+// }
+
+// export default DragDropImageloader;
