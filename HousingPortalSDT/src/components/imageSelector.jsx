@@ -60,18 +60,20 @@ function DragDropImageloader() {
     }
   }
 
-
   return (
     <div className="justify-between w-full h-full border">
       <div
-        className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightGrey h-[350px] w-full"
-        onClick={selectFiles} onDragOver={onDragOver} onDragLeave={onDragLeave} onDrop={onDrop}
+        className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[30px] bg-lightgray h-[320px] w-full"
+        onClick={selectFiles}
+        onDragOver={onDragOver}
+        onDragLeave={onDragLeave}
+        onDrop={onDrop}
       >
         {isDragging ? (
           <span className="text-lg">Drop Images here</span>
         ) : (
           <span
-            className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:text-white text-lg text-gray-600"
+            className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:text-white text-lg text-lightgray2 "
             role="button"
           >
             Add Photo+
@@ -86,6 +88,66 @@ function DragDropImageloader() {
           onChange={onFileSelect}
         />
       </div>
+
+      <div className="flex flex-row justify-between gap-4 mb-8">
+        {/* 2nd image imageSelector  */}
+        <div
+          className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightgray h-[250px] w-3/5 lg:-pb-4 "
+          onClick={selectFiles}
+          onDragOver={onDragOver}
+          onDragLeave={onDragLeave}
+          onDrop={onDrop}
+        >
+          {isDragging ? (
+            <span className="text-lg">Drop Images here</span>
+          ) : (
+            <span
+              className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:text-white text-lg text-lightgray2"
+              role="button"
+            >
+              Add Photo+
+            </span>
+          )}
+          <input
+            name="file"
+            type="file"
+            className="hidden file"
+            multiple
+            ref={fileInputRef}
+            onChange={onFileSelect}
+          />
+        </div>
+
+        {/* 3rd image slector */}
+        <div
+          className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightgray h-[320px]bg-lightgray h-[250px] w-2/5  lg:-pb-4 "
+          onClick={selectFiles}
+          onDragOver={onDragOver}
+          onDragLeave={onDragLeave}
+          onDrop={onDrop}
+        >
+          {isDragging ? (
+            <span className="text-lg">Drop Images here</span>
+          ) : (
+            <span
+              className="ml-1 text-#252525 transition-opacity cursor-pointer duration-400 hover:text-white text-lg text-lightgray2"
+              role="button"
+            >
+              Add Photo+
+            </span>
+          )}
+          <input
+            name="file"
+            type="file"
+            className="hidden file"
+            multiple
+            ref={fileInputRef}
+            onChange={onFileSelect}
+          />
+        </div>
+      </div>
+
+      {/* image display of the 1st image box */}
       <div className="container flex flex-wrap items-start justify-start w-full h-auto mt-4 overflow-y-auto">
         {images.map((image, index) => (
           <div
@@ -106,13 +168,13 @@ function DragDropImageloader() {
           </div>
         ))}
       </div>
-    
-      <button
+
+      {/* <button
         type="button"
         className="bg-blue-600 text-white flex py-4 px-12 rounded-[5px] items-center mt-10"
       >
         Upload
-      </button>
+      </button> */}
     </div>
   );
 }
