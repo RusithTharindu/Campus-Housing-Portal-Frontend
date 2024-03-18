@@ -7,7 +7,7 @@ const Editdashboard = () => {
   return (
     <Container>
       <div className="flex flex-row">
-        <div className="  hidden lg:flex lg:w-[200px]">side bar</div>
+        <div className="  hidden lg:flex lg:w-[300px] lg:-ml-20 mr-20 border">side bar</div>
         <div className="flex flex-col justify-between flex-grow gap-4 lg:flex-row">
           <ImageSelector />
           <Viewmap />
