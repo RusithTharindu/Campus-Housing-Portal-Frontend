@@ -1,5 +1,3 @@
-import tailwindcss from 'tailwindcss';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'lightGrey': '#D2D2D2', 
+        'lightgray': '#D2D2D2',
+        'lightgray2': '#767676',
         'grey1': '#6B6B6B',
         'black1': '#252525',
         

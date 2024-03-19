@@ -6,9 +6,12 @@ import Viewmap from "../../components/viewmap";
 const Editdashboard = () => {
   return (
     <Container>
-      <div className=" flex lg:flex-row flex-col gap-4">
-        <ImageSelector/>
-        <Viewmap/>
+      <div className="flex flex-row">
+        <div className="  hidden lg:flex lg:w-[300px] lg:-ml-20 mr-20 border">side bar</div>
+        <div className="flex flex-col justify-between flex-grow gap-4 lg:flex-row">
+          <ImageSelector />
+          <Viewmap />
+        </div>
       </div>
     </Container>
   );
