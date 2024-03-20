@@ -4,6 +4,8 @@ import Landlord from './pages/landlordPages/Landlord';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ViewProperty from './pages/ViewProperty';
+import Editdashboard from "./pages/landlordPages/Editdashboard";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/landlord" element={<Landlord />} />
               <Route path="/property" element={<ViewProperty />} />
+              <Route path="/editdashboard" element={<Editdashboard/>} />
               {/* Add New routes here */}
 
             </Routes>
