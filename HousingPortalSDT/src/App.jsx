@@ -16,6 +16,7 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/landlord" element={<Landlord />} />
+              <Route path="/property" element={<ViewProperty />} />
               {/* Add New routes here */}
 
             </Routes>
