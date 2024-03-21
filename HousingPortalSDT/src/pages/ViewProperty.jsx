@@ -1,11 +1,13 @@
 import React from 'react'
+import ImageSelector from "../components/imageSelector";
+import Viewmap from "../components/viewmap";
 
 function ViewProperty() {
   return (
     <div className='h-screen w-[80%] ml-[10%] mt-[10%] mb-[20%]'>
         <div className=' h-[50%] w-[100%] grid grid-cols-2 divide-[50%]'>
-            <div className='h-[100%]  '></div>
-            <div className='h-[100%] '></div>
+            <div className='h-[100%]  '><ImageSelector /></div>
+            <div className='h-[100%] '><Viewmap /></div>
         </div>
         <div className=' h-[50%] w-[100%] grid grid-cols-2 divide-[50%]'>
             <div className='h-[100%] '>
