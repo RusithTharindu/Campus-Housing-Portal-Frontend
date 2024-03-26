@@ -9,6 +9,7 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+
     container: {
       center: true,
       padding: "2rem",
@@ -25,6 +26,10 @@ module.exports = {
         '24': '24px'
       },
       colors: {
+        'lightgray': '#D2D2D2',
+        'lightgray2': '#767676',
+        'grey1': '#6B6B6B',
+        'black1': '#252525',
         'custom-greeen': '#6DFFB9',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -83,3 +88,6 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
+
+
+

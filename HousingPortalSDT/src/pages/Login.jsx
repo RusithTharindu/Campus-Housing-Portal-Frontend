@@ -1,10 +1,18 @@
+import Container from "../components/container/container";
 
 const Login = () => {
     return (
-        <div className="h-screen w-screen bg-[#000000] flex justify-center items-center">
+        <Container>
+        <div className="h-screen w-screen bg-[#000000] flex justify-center items-center"></div>
             <div className="border-[#ffffff] border w-[500px] h-[600px] rounded-[20px] flex flex-col items-center justify-center bg-black">
+
                 <div className=" flex flex-col items-center">
                     <img src="src\assets\assets/home" className="h-[80px] mb-[15px]" />
+                <div/>
+
+                <div className="flex flex-col items-center ">
+                    <img src="src/assets/logo1.png" className="h-[80px] mb-[15px]" />
+
                     <p className="text-[25px] font-semibold text-white mb-[5px]">Log In to your account</p>
                     <p className="text-[rgba(255,255,255,0.3)] text-[15px] font-[300]">Welcome back ! Please enter your details.</p>
                 </div>
@@ -28,6 +36,7 @@ const Login = () => {
                 <p className="text-[#93A0B9] mt-[15px] font-regular">Don't have an account? <a href="#" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign up</a></p>
             </div>
         </div>
+        </Container>
     ) 
 }
 
