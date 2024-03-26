@@ -5,7 +5,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [role] = useState('propertyOwner');
 
-    const {signup,error , isLoding } = useSignup();
+    const {signup,isLoding } = useSignup();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,18 +22,14 @@ const Register = () => {
                 </div>
                 <form className='signup' onSubmit={handleSubmit}>
                     <div className="w-[400px] mt-[20px]">
-
                         {/* <p className="text-white font-semibold text-[15px] mb-[5px]">Select Your Role</p>
-                        <select className="bg-[#20242D] w-[100%] h-[40px] rounded-[10px] pl-[15px] text-[#ffffffc4] mb-[15px]" >
-
-                        <p className="text-white font-semibold text-[15px] mb-[5px]">Select Your Role</p>
                         <select className="bg-[#20242D] w-[100%] h-[40px] rounded-[10px] px-[15px] text-[#ffffffc4] mb-[15px]" >
 
                             <option value="student">Student</option>
                             <option value="warden">Warden</option>
                             <option value="landlord">Hostel Owner</option>
-                        </select> */}
-                        <p className="text-white font-semibold text-[15px] mb-[5px]">Email</p>
+                        </select>
+                        <p className="text-white font-semibold text-[15px] mb-[5px]">Email</p> */}
                         <input 
                         type="email" 
                         onChange={(e) => setEmail(e.target.value)}

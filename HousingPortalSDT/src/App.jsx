@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route} from 'react-router-dom';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'tailwindcss/tailwind.css';
 import Landlord from './pages/landlordPages/Landlord';
