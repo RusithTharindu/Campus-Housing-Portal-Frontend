@@ -1,5 +1,3 @@
-import Container from "../components/container/container";
-
 const Login = () => {
     return (
         <div className="h-screen w-screen bg-[#000000] flex justify-center items-center">
@@ -31,5 +29,4 @@ const Login = () => {
         </div>
     ) 
 }
-
 export default Login;
