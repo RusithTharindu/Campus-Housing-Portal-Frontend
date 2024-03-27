@@ -10,12 +10,12 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signup(email, password, role);
-      
+    
     }
     return (
         <div className="h-screen w-screen bg-[#111111] flex justify-center items-center">
             <div className=" w-[500px] h-[650px] rounded-[20px] flex flex-col items-center justify-center bg-[rgba(0,0,0,0.6)]">
-                <div className=" flex flex-col items-center">
+                <div className="flex flex-col items-center ">
                     <img src="src/assets/logo1.png" className="h-[80px] mb-[15px]" />
                     <p className="text-[25px] font-semibold text-white mb-[5px]">Welcome to [Project Name]</p>
                     <p className="text-[rgba(255,255,255,0.3)] text-[15px] font-[300]">Please fill the below form to register</p>
