@@ -31,7 +31,7 @@ const Register = () => {
                 {/*Divider*/}
                 <div className="w-[400px] h-[1px] bg-[rgba(255,255,255,0.3)] mt-[25px]"></div>
 
-                <p className="text-[#93A0B9] mt-[15px] font-regular">Already have an Account? <a href="#" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign In</a></p>
+                <p className="text-[#93A0B9] mt-[15px] font-regular">Already have an Account? <a href="/" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign In</a></p>
             </div>
         </div>
     ) 
