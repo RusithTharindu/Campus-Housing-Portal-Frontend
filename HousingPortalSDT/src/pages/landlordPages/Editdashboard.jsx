@@ -13,7 +13,7 @@ const Editdashboard = () => {
         </div>
         <div className="flex-grow">
           <div className="flex flex-col justify-between gap-4">
-            <div className="flex flex-row">
+            <div className="flex flex-row gap-4">
               <ImageSelector />
               <Viewmap />
             </div>
