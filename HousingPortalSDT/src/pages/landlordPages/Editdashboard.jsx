@@ -3,6 +3,7 @@ import Container from "../../components/container/container";
 import ImageSelector from "../../components/imageSelector";
 import Viewmap from "../../components/viewmap";
 import Form from "../../components/form";
+import SelectedImageUpload from "@/components/selectedimageupdate";
 
 const Editdashboard = () => {
   return (
@@ -14,7 +15,7 @@ const Editdashboard = () => {
         <div className="flex-grow">
           <div className="flex flex-col justify-between gap-4">
             <div className="flex flex-row gap-4">
-              <ImageSelector />
+              <SelectedImageUpload />
               <Viewmap />
             </div>
             <Form />
