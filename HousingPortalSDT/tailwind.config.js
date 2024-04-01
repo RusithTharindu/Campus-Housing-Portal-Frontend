@@ -34,10 +34,9 @@ module.exports = {
         'grey2': '#9C9C9C',
         'grey3': '#C0C0C0',
         'black1': '#252525',
-<<<<<<< HEAD
         'blue1': '#1E6AFF',
 
-=======
+
         'custom-greeen': '#6DFFB9',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -91,7 +90,6 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
->>>>>>> 0e2b6dabdafe9c340daa3149ab6381764affb572
       },
     },
   },
