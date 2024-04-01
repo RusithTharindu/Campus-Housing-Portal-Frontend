@@ -120,7 +120,7 @@ function DragDropImageloader() {
 
         {/* 3rd image slector */}
         <div
-          className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightgray h-[320px]bg-lightgray h-[250px] w-2/5  lg:-pb-4 "
+          className="flex items-center justify-center text-center mt-4 text-gray-700 rounded-[20px] bg-lightgray h-[250px] w-3/5 lg:-pb-4 "
           onClick={selectFiles}
           onDragOver={onDragOver}
           onDragLeave={onDragLeave}

@@ -13,8 +13,8 @@ const Editdashboard = () => {
           side bar
         </div>
         <div className="flex-grow">
-          <div className="flex flex-col justify-between gap-4">
-            <div className="flex flex-row gap-4">
+          <div className="flex flex-col justify-between gap-6">
+            <div className="flex flex-row gap-6">
               <SelectedImageUpload />
               <Viewmap />
             </div>
