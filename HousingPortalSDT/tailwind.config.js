@@ -26,10 +26,18 @@ module.exports = {
         '24': '24px'
       },
       colors: {
+        'white1': '#F6F6F6',
         'lightgray': '#D2D2D2',
+        'lightgray1': '#E4E4E4',
         'lightgray2': '#767676',
         'grey1': '#6B6B6B',
+        'grey2': '#9C9C9C',
+        'grey3': '#C0C0C0',
         'black1': '#252525',
+<<<<<<< HEAD
+        'blue1': '#1E6AFF',
+
+=======
         'custom-greeen': '#6DFFB9',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -83,6 +91,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+>>>>>>> 0e2b6dabdafe9c340daa3149ab6381764affb572
       },
     },
   },
