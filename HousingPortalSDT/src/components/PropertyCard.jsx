@@ -5,7 +5,7 @@ import ToggleBtn from '../components/ToggleBtn'
 
 const PropertyCard = (props) => {
     return(
-        <div className="bg-[#F1F1F1] w-[700px] h-[150px] p-[20px] my-[10px] rounded-[15px] flex flex-row">  
+        <div className="bg-[#f3d7f7] w-[700px] h-[150px] p-[20px] m-[10px] rounded-[15px] flex flex-row">  
             <div className="w-[30%] h-[100%] flex items-center justify-center">
                 {/*Image Container*/}
                 <img src={refImage} alt="" className='h-[100%] w-[100%] rounded-[10px]'/>
