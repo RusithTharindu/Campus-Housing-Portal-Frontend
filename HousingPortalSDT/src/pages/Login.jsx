@@ -24,10 +24,9 @@ const Login = () => {
                 {/*Divider*/}
                 <div className="w-[400px] h-[1px] bg-[rgba(255,255,255,0.3)] mt-[25px]"></div>
 
-                <p className="text-[#93A0B9] mt-[15px] font-regular">Don't have an account? <a href="#" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign up</a></p>
+                <p className="text-[#93A0B9] mt-[15px] font-regular">Don't have an account? <a href="/register" className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] ">Sign up</a></p>
             </div>
         </div>
-       
     ) 
 }
 export default Login;
