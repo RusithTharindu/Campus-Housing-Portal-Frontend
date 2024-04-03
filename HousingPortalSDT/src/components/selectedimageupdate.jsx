@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-function SelectedImageUpload({ selectedImage }) {
+function SelectedImageUpload({ selectedImage, setImagess }) {
   const [images, setImages] = useState([null, null, null]);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRefs = [useRef(null), useRef(null), useRef(null)];
@@ -18,6 +18,12 @@ function SelectedImageUpload({ selectedImage }) {
         name: file.name,
         url: URL.createObjectURL(file),
       };
+      return newImages;
+    });
+    setImagess((prevImages) => {
+      const newImages = [...prevImages];
+      newImages[index] = file;
+      console.log(newImages);
       return newImages;
     });
   }
