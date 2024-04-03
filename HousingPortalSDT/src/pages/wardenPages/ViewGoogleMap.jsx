@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { GoogleMap, Marker, useJsApiLoader, Autocomplete } from '@react-google-maps/api';
 import DragLocation from '../../../public/markerImages/Location.png';
 import GreenLocation from '../../../public/markerImages/greenLocation.png';
+import { useNavigate } from 'react-router-dom';
 
 
 function ViewGoogleMap() {
+    const navigation = useNavigate();
 
     const [lat, setLat] = useState(6.824265618550028);
     const [lon, setLon] = useState(80.04001213226317);
@@ -22,6 +24,8 @@ function ViewGoogleMap() {
 
     const handleSetLocation = () => {
         alert(`Latitude: ${lat} Longitude: ${lon}`);
+        navigation('/editdashboard', { state: { lat, lon } });
+        
     };
 
     return (
