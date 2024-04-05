@@ -1,45 +1,46 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'tailwindcss/tailwind.css';
-import Landlord from './pages/landlordPages/Landlord';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Hostels from './pages/Hostels';
-import ViewProperty from './pages/ViewProperty';
+import "tailwindcss/tailwind.css";
+import Landlord from "./pages/landlordPages/Landlord";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Hostels from "./pages/Hostels";
+import ViewProperty from "./pages/ViewProperty";
 import Editdashboard from "./pages/landlordPages/Editdashboard";
 import Article from "./pages/landlordPages/Article";
 import Art from "./pages/landlordPages/Art";
 import ViewGoogleMap from "./pages/wardenPages/ViewGoogleMap";
 import ViewAllProperties from "./pages/wardenPages/ViewAllProperties";
 import Directons from "./pages/wardenPages/Directons";
+import Header from "./components/Header";
 
 function App() {
-  return(
+  return (
     <>
-    {/* <NavBar /> add like this */}
+      {/* <NavBar /> add like this */}
 
-          <BrowserRouter>
-            <Routes>
-              <Route path = '/logedin' element = {<Hostels/>}/>
-              <Route path="/" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/landlord" element={<Landlord />} />
-              <Route path="/viewMap" element={<ViewGoogleMap />} />
-              <Route path="/viewAllProperties" element={<ViewAllProperties />} />
-              <Route path="/property" element={<ViewProperty />} />
-              <Route path="/editdashboard" element={<Editdashboard/>} />
-              <Route path="/ArticleView" element={<Article/>} />
-              <Route path="/Art" element={<Art/>} />
-              <Route path="/directions" element={<Directons/>} />
-              {/* Add New routes here */}
+      <BrowserRouter>
+        <Header />
 
-            </Routes>
-          </BrowserRouter>
+        <Routes>
+          {/* <Route path = '/home' element = {<Header/>}/> */}
+          <Route path="/logedin" element={<Hostels />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/landlord" element={<Landlord />} />
+          <Route path="/viewMap" element={<ViewGoogleMap />} />
+          <Route path="/viewAllProperties" element={<ViewAllProperties />} />
+          <Route path="/property" element={<ViewProperty />} />
+          <Route path="/editdashboard" element={<Editdashboard />} />
+          <Route path="/ArticleView" element={<Article />} />
+          <Route path="/Art" element={<Art />} />
+          <Route path="/directions" element={<Directons />} />
+          {/* Add New routes here */}
+        </Routes>
+      </BrowserRouter>
 
       {/* <Footer/> add like this*/}
     </>
-
-  )
+  );
 }
 
 export default App;

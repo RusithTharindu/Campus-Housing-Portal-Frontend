@@ -9,9 +9,10 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await signup(email, password, role);
-    
+      const response = await signup(email, password, role);
+      console.log(response);
     }
+    
     return (
         <div className="h-screen w-screen bg-[#111111] flex justify-center items-center">
             <div className=" w-[500px] h-[650px] rounded-[20px] flex flex-col items-center justify-center bg-[rgba(0,0,0,0.6)]">
