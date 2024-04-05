@@ -18,7 +18,7 @@ function ViewAllProperties() {
   const [propertyView, setPropertyView] = useState(null);
   
 
-  const userRole = 'student';
+  const userRole = 'warden';
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
