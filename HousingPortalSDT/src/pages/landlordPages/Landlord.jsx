@@ -16,8 +16,8 @@ const Landlord = () => {
     const [studentVal , setStudentVal] = useState("");
 
     return(
-        <div className='h-[90vh] w-[100vw] flex justify-center items-center'>
-            <div className='h-[800px] w-[1400px] border-2 border-[#dfdfdf] flex flex-row rounded-[10px] '>
+        <div className='h-[90vh] w-[100vw`] flex justify-center items-center'>
+            <div className='h-[100%] w-[100%] border-2 border-[#dfdfdf] flex flex-row rounded-[10px] '>
                 <div className='h-[100%] w-[30%] flex flex-col items-center border-r-2 border-r-[#dfdfdf] rounded-[20px]' >
                     {/*For left links */}
                     <p className='mt-[20px] mb-[20px] font-semibold text-[25px]'>Property Management</p>

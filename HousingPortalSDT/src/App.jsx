@@ -26,7 +26,7 @@ function App() {
               <Route path="/landlord" element={<Landlord />} />
               <Route path="/viewMap" element={<ViewGoogleMap />} />
               <Route path="/viewAllProperties" element={<ViewAllProperties />} />
-              <Route path="/property" element={<ViewProperty />} />
+              <Route path="/property/:propertyId" element={<ViewProperty />} />
               <Route path="/editdashboard" element={<Editdashboard/>} />
               <Route path="/ArticleView" element={<Article/>} />
               <Route path="/Art" element={<Art/>} />
