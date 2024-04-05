@@ -1,21 +1,12 @@
-// import { useLogout } from '@/hooks/useLogout'
+import { useLogout } from "@/hooks/userLogout";
 
 import { Link } from "react-router-dom";
-// import { useState } from "react";
-
-// const Navbar = () => {
-//     const {logout} = useLogout()
-//     const handleClick = () => {
-//        logout()
-//     }
-// }
 
 function Header() {
-  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  //   const toggleMenu = () => {
-  //     setIsMenuOpen(!isMenuOpen);
-  //   };
+  const { logout } = useLogout();
+  const handleClick = () => {
+    logout();
+  };
 
   return (
     <nav className="bg-black fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -31,11 +22,13 @@ function Header() {
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <img
-            src="src/assets/assets/Male User.png"
-            alt="hostel logo"
-            className="h-8"
-          />
+          <button
+            className="bg-white border font-[500] text-black px-3 py-1 rounded-[8px] font-poppins hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 dark:hover:bg-gray-700 dark:text-gray-400"
+            onClick={handleClick}
+          >
+            Log out
+          </button>
+
           <button
             // onClick={toggleMenu}
             data-collapse-toggle="navbar-sticky"
@@ -54,9 +47,9 @@ function Header() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
