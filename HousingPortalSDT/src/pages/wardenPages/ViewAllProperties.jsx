@@ -5,13 +5,20 @@ import GreenLocation from '../../../public/markerImages/greenLocation.png';
 import MapPropertyCard from '@/components/MapPropertyCard';
 import axios from 'axios';
 import { cn } from '@/lib/utils';
+import { useNavigate } from 'react-router-dom';
 
 function ViewAllProperties() {
+
+  const navigation = useNavigate();
+  
   const [properties, setProperties] = useState([]);
   const [directions, setDirections] = useState(null);
   const [response, setResponse] = useState(null);
   const [getId, setGetId] = useState(null);
   const [propertyView, setPropertyView] = useState(null);
+  
+
+  const userRole = 'student';
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
@@ -24,6 +31,23 @@ const fetchProperties = async () => {
       const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWFkM2MzODM3Yzk0MjUwMzRlMWMxZiIsInJvbGUiOiJ3YXJkZW4iLCJpYXQiOjE3MTA0MzMzNzF9.NpFl2l5C61DP2TZ_4RQMVPK2xOplOkC1fuwfZC2Nf_M';
 
       const response = await axios.get('http://localhost:3000/api/get-all-properties', {
+          headers: {
+              'Authorization': `Bearer ${token}`
+          }
+      });
+      setProperties(response.data);
+      console.log(response.data);
+  } catch (error) {
+      console.error('Error fetching properties:', error);
+  }
+};
+const fetchApprovedProperties = async () => {
+  try {
+      
+    
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWMxMjMzODk5OWMxZTRhNWZjYjc5ZiIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzEyMzQwOTM5fQ.yRfBg5xKoVLa99Lr5P2A-bFKdBuX1oYWxQnt0fOeZ8M';
+
+      const response = await axios.get('http://localhost:3000/api/get-all-approved-properties', {
           headers: {
               'Authorization': `Bearer ${token}`
           }
@@ -83,8 +107,13 @@ useEffect(() => {
 }, [isLoaded, response]);
 
 useEffect(() => {
-
+if(userRole === 'student') {
+  fetchApprovedProperties();
+  
+}else {
   fetchProperties();
+}
+  
   
 }, []);
 
@@ -149,8 +178,12 @@ useEffect(() => {
                               pTitle = {property.title} 
                               pLon = {property.coordinates.longitude} 
                               pLat = {property.coordinates.latitude} 
-                              isInMap = {property.isInMap}
+                              isInMap =  {property.isInMap} 
                               mainImage = {property.image1}
+                              onClick = {() => {
+                                setPropertyView(property);
+                                navigation(`/property/${property._id}`);
+                              }}
                           
                               
                               />
@@ -163,7 +196,7 @@ useEffect(() => {
                         propertyView !== null && (
                           <>
                             <div className="absolute z-1 w-1/4 h-[70vh] m-2 bg-[#fff] p-[10px] bottom-3 right-3 rounded-[12px] flex flex-col justify-center items-center shadow-xl " >
-                              <img src="../../../public/uploads/wallpaper_15783783195e14244fac940.jpg" alt="" 
+                              <img src={`../../public/uploads/${propertyView.image1}`}  alt="" 
                                 className='w-full h-[50%] rounded-[12px]' 
                               />
                               <div className=' bg-[#fff] w-[95%] h-[46%] '>
@@ -172,7 +205,9 @@ useEffect(() => {
                                 <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Property Price</p>
                                 <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Property Status</p>
                               </div>
-                              <button className='w-[100%] bg-[#4541FD] text-[#fff]  h-[40px] rounded-[10px]'>See More</button>
+                              <button onClick={() => {
+                                navigation(`/property/${propertyView._id}`);
+                              }} className='w-[100%] bg-[#4541FD] text-[#fff]  h-[40px] rounded-[10px] hover:bg-[#4441fdd4] ease-in-out duration-200'>See More</button>
 
 
                             </div>
