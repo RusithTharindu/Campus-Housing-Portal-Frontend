@@ -13,7 +13,7 @@ const RequestDisplay = () => {
                 </select>
                 <input type="text" name="searchbox" placeholder="Search Properties..." className="h-[50px] w-[300px] bg-[#F6F6F6] text-[15px] font-medium border border-[#797979] rounded-full p-5"/>
             </div>
-            <div className="bg-[#ececec] w-[100%] h-[550px] my-7 overflow-y-auto flex flex-col items-center rounded-xl">
+            <div className="bg-[#ececec] w-[100%] h-[80%] my-7 overflow-y-auto flex flex-col items-center rounded-xl">
                 <div className=" border-[#dfdfdf] border-b-2 w-[100%] h-[60px] flex flex-row">
                     <div className="h-[100%] w-[40%] flex items-end pb-[5px] pl-[20px]">
                         <p className="text-[15px] font-semibold">Email</p>
@@ -26,7 +26,7 @@ const RequestDisplay = () => {
                     </div>
                     <div className="h-[100%] w-[30%] "></div>
                 </div>
-                <div className="bg-[#ececec] w-[100%] h-[500px] overflow-scroll flex flex-col items-center rounded-xl">
+                <div className="bg-[#ececec] w-[100%] h-[100%] overflow-scroll flex flex-col items-center rounded-xl">
                     <StuRequestDetails/>
                     <StuRequestDetails/>
                     <StuRequestDetails/>
