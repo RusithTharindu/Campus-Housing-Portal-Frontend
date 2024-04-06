@@ -1,5 +1,6 @@
 import { useSignup } from "../hooks/useSignup";
 import { useState } from "react";
+
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,6 +77,7 @@ const Register = () => {
         <p className="text-[#93A0B9] mt-[15px] font-regular">
           Already have an Account?{" "}
           <a
+            onClick={() => navition("/login", { state: json })}
             href="/"
             className="font-semibold text-[#6367e2] hover:underline decoration-solid-[#fff] "
           >
