@@ -124,10 +124,10 @@ if(userRole === 'student') {
 
 
   return (
-    <div className='absolute z-0 w-screen h-screen '>
+    <div className='absolute z-0 w-screen h-[90%] '>
                   {
                 isLoaded ? (
-                    <div className='absolute z-0 w-screen h-screen'>
+                    <div className='absolute z-0 w-screen h-[100%]'>
                             <GoogleMap
                                 mapContainerStyle={{ width: '100%', height: '100%' }}
                                 center={{ lat: 6.824265618550028, lng: 80.04001213226317 }}
@@ -204,9 +204,18 @@ if(userRole === 'student') {
                               />
                               <div className=' bg-[#fff] w-[95%] h-[46%] '>
                                 <h1 className='text-[#000] text-[20px] font-bold p-[10px]'>{propertyView.title}</h1>
-                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Rs.30000</p>
-                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>guqd u</p>
-                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>gquwduq q</p>
+                                <div className='flex items-center justify-start '>
+                                    <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Rs.30000</p> 
+                                    <span className='text-[#bbb] text-[15px]'>{"( Per Person )"}</span>
+                                </div>
+                                <div className='flex items-center justify-start '>
+                                    <p className='text-[#000] text-[15px] font-poppins p-[10px]'>{propertyView.availableRooms} Rooms Available</p>
+                                </div>
+                                <div className='flex flex-col items-end justify-center '>
+                                    <p className='text-[#4879C2] text-[15px] font-poppins p-[10px]'>Published On</p> 
+                                    <span className='text-[#bbb] text-[15px]'>{propertyView.date}</span>
+                                </div>
+                                
                               </div>
                               <button onClick={() => {
                                 navigation(`/property/${propertyView._id}`, { state: { userRole, email } });
