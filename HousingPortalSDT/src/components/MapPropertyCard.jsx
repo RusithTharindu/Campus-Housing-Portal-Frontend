@@ -22,7 +22,7 @@ function MapPropertyCard({ pTitle, pLat, pLon, isInMap , mainImage, onClick}) {
     }, [pLat, pLon]);
 
     return (
-        <div className='w-[100%] h-[40%] flex flex-col items-center mb-4 cursor-pointer hover:bg-[#e6e6e6]'
+        <div className='w-[100%] h-[100%]  flex flex-col items-center mb-[50px] cursor-pointer hover:bg-[#e6e6e6]'
             onClick={onClick}
         >
         <div className="border w-[100%] h-[200px] rounded-[10px] ">

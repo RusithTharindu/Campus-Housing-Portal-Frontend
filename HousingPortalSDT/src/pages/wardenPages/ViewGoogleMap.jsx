@@ -34,7 +34,7 @@ function ViewGoogleMap() {
             
             {
                 isLoaded ? (
-                    <div className='absolute z-0 w-screen h-screen'>
+                    <div className='absolute z-0 w-screen h-[90%] '>
                             <GoogleMap
                                 mapContainerStyle={{ width: '100%', height: '100%' }}
                                 center={{ lat: lat, lng: lon }}
