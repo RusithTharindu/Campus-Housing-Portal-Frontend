@@ -20,7 +20,7 @@ const Register = () => {
         <div className="flex flex-col items-center ">
           <img src="src/assets/logo1.png" className="h-[80px] mb-[15px]" />
           <p className="text-[25px] font-semibold text-white mb-[5px]">
-            Welcome to [Project Name]
+            Welcome to Housing Portal
           </p>
           <p className="text-[rgba(255,255,255,0.3)] text-[15px] font-[300]">
             Please fill the below form to register

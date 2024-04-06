@@ -5,11 +5,14 @@ import GreenLocation from '../../../public/markerImages/greenLocation.png';
 import MapPropertyCard from '@/components/MapPropertyCard';
 import axios from 'axios';
 import { cn } from '@/lib/utils';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function ViewAllProperties() {
 
   const navigation = useNavigate();
+  const location = useLocation();
+  const { role, email } = location.state || {};
+  
   
   const [properties, setProperties] = useState([]);
   const [directions, setDirections] = useState(null);
@@ -18,7 +21,7 @@ function ViewAllProperties() {
   const [propertyView, setPropertyView] = useState(null);
   
 
-  const userRole = 'student';
+  const userRole = role;
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
@@ -170,7 +173,7 @@ if(userRole === 'student') {
                                 {directions && <DirectionsRenderer directions={directions} />}
 
                             </GoogleMap>
-                      <div className="absolute z-1 w-1/4 h-[98vh] m-2 bg-[#fafafa] p-[10px] bottom-0 overflow-scroll flex items-center flex-col" >
+                      <div className="absolute z-1 w-1/4 h-[90%] m-2 bg-[#fafafa] p-[10px] bottom-0 overflow-scroll flex items-center flex-col" >
                       {
                         
                         properties.map((property) => (
@@ -182,7 +185,7 @@ if(userRole === 'student') {
                               mainImage = {property.image1}
                               onClick = {() => {
                                 setPropertyView(property);
-                                navigation(`/property/${property._id}`);
+                                navigation(`/property/${property._id}`, { state: { userRole, email } });
                               }}
                           
                               
@@ -202,11 +205,11 @@ if(userRole === 'student') {
                               <div className=' bg-[#fff] w-[95%] h-[46%] '>
                                 <h1 className='text-[#000] text-[20px] font-bold p-[10px]'>{propertyView.title}</h1>
                                 <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Rs.30000</p>
-                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Property Price</p>
-                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>Property Status</p>
+                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>guqd u</p>
+                                <p className='text-[#000] text-[15px] font-poppins p-[10px]'>gquwduq q</p>
                               </div>
                               <button onClick={() => {
-                                navigation(`/property/${propertyView._id}`);
+                                navigation(`/property/${propertyView._id}`, { state: { userRole, email } });
                               }} className='w-[100%] bg-[#4541FD] text-[#fff]  h-[40px] rounded-[10px] hover:bg-[#4441fdd4] ease-in-out duration-200'>See More</button>
 
 

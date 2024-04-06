@@ -73,9 +73,7 @@ const handleSubmit = async (e) => {
   return (
     <Container>
       <div className="flex flex-row">
-        <div className="hidden lg:flex lg:w-[300px] lg:-ml-40 mr-20 border">
-          side bar
-        </div>
+      
         <div className="flex-grow">
           <div className="flex flex-col justify-between gap-6">
             <div className="flex flex-row gap-6">

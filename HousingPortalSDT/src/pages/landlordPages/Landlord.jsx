@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from '../../components/container/container';
 import EmptyRegistration from '../../components/EmptyRegistration'
 import GloButton from '../../components/GloButton';
@@ -11,23 +11,59 @@ import LeftIcon1 from '../../assets/homes.png'
 import LeftIcon2 from '../../assets/profile.png'
 import PropertyDisplay from '../../components/PropertyDisplay';
 import RequestDisplay from '../../components/RequestDisplay';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 const Landlord = () => {
     const [studentVal , setStudentVal] = useState("");
+    const location = useLocation();
+    const [properties, setProperties] = useState([]);
+    const { role, email } = location.state || {};
+
+    const getMyProperties = async () => {
+        try {
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTBlNGFlY2U3OWY2NjQwYmM4YjQ0MiIsInJvbGUiOiJwcm9wZXJ0eU93bmVyIiwiaWF0IjoxNzEyMzk3MDg5fQ.zaStkP0MCKJxlVDdIPK9iXX1xJb8f7m8Su2XTcQyKP0';
+    
+            const response = await axios.get('http://localhost:3000/api/get-my-properties', {
+                params: {
+                    email: 'fernando123@gmail.com'
+                },
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+    
+            setProperties(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching properties:', error);
+        }
+    }
+    
+    useEffect(() => {
+        getMyProperties();
+    },[]);
+    
+
 
     return(
         <div className='h-[90vh] w-[100vw`] flex justify-center items-center'>
-            <div className='h-[100%] w-[100%] border-2 border-[#dfdfdf] flex flex-row rounded-[10px] '>
+            <div className='h-[100%] w-[100%] flex flex-row rounded-[10px] '>
                 <div className='h-[100%] w-[30%] flex flex-col items-center border-r-2 border-r-[#dfdfdf] rounded-[20px]' >
                     {/*For left links */}
                     <p className='mt-[20px] mb-[20px] font-semibold text-[25px]'>Property Management</p>
                     <LandlordLeftLink name= "Student Requests" onclick icon = {LeftIcon2}/>
                     <LandlordLeftLink name= "Registered Properties" onclick icon = {LeftIcon1}/>
                     <GloButton name = "Register a Property"  />
+                    
                 </div>
                 <div className='h-[100%] w-[70%] p-[5px] flex flex-col justify-center items-center'>
-                    {/* <PropertyDisplay/> */}
-                    <RequestDisplay/>
+                
+                
+                    <PropertyDisplay properties = {properties}/>
+                    {/* <RequestDisplay/> */}
                 </div>
             </div>
         </div>

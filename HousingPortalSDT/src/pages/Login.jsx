@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+
+  const navigation = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("propertyOwner");
@@ -10,9 +15,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(email, password, role);
+    console.log(email, role);
 
     await login(email, password, role);
+    if(role === 'student' ) {
+      navigation('/viewAllProperties', { state: { role, email } });
+    }else if(role === 'warden') {
+      navigation('/viewAllProperties', { state: { role } });
+    }else if(role === 'admin') {
+      navigation('/viewAllProperties', { state: { role } });
+    }else if (role === 'propertyOwner') {
+      navigation('/landlord', { state: { role , email} });
+    }
+    
+    
   };
   return (
     <div className="h-screen w-screen bg-[#000000] flex justify-center items-center">
