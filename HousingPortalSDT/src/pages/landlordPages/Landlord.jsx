@@ -49,8 +49,8 @@ const Landlord = () => {
 
 
     return(
-        <div className='h-[90vh] w-[100vw`] flex justify-center items-center'>
-            <div className='h-[100%] w-[100%] flex flex-row rounded-[10px] '>
+        <div className='h-[90vh] w-[100vw] flex justify-center items-center'>
+            <div className='h-[100%] w-[100%] flex flex-row rounded-[10px] px-[25px]'>
                 <div className='h-[100%] w-[30%] flex flex-col items-center border-r-2 border-r-[#dfdfdf] rounded-[20px]' >
                     {/*For left links */}
                     <p className='mt-[20px] mb-[20px] font-semibold text-[25px]'>Property Management</p>
@@ -60,10 +60,8 @@ const Landlord = () => {
                     
                 </div>
                 <div className='h-[100%] w-[70%] p-[5px] flex flex-col justify-center items-center'>
-                
-                
-                    <PropertyDisplay properties = {properties}/>
-                    {/* <RequestDisplay/> */}
+                    {/* <PropertyDisplay properties = {properties}/> */}
+                    <RequestDisplay/>
                 </div>
             </div>
         </div>
