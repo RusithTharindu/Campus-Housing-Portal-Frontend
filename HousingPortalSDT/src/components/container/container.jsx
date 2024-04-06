@@ -3,12 +3,13 @@ export default function Container({ children }) {
     <div
       className={`
             mx-auto
-            max-w-[2000px]
+            max-w-[100%]
             border
             px-4
             sm:px-6
             md:px-10
             lg:px-20
+            py-14
         `}
     >
       {children}

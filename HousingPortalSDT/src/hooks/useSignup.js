@@ -14,7 +14,7 @@ export const useSignup = () => {
     setError(null);
 
     const response = await fetch(
-      "http://localhost:8080/registerPropertyOwner",
+      "http://localhost:3000/registerPropertyOwner",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
