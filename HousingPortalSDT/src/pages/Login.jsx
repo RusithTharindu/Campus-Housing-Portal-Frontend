@@ -4,7 +4,7 @@ import { useLogin } from "../hooks/useLogin";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("propertyOwner");
   const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {

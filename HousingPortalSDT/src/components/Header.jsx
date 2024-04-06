@@ -23,7 +23,7 @@ function Header() {
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
-            className="bg-white border font-[500] text-black px-3 py-1 rounded-[8px] font-poppins hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 dark:hover:bg-gray-700 dark:text-gray-400"
+            className="bg-black border border-white text-white px-3 py-1 rounded-[8px] font-poppins  transition-colors hover:border-[#6DFFB9] focus:outline-none md:hover:text-[#6DFFB9] focus:ring-1"
             onClick={handleClick}
           >
             Log out
