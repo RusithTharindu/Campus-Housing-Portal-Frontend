@@ -9,7 +9,7 @@ function Header() {
   };
 
   return (
-    <nav className="bg-black fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-[#252525] sticky w-full z-20 top-0 start-0  ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
@@ -70,7 +70,7 @@ function Header() {
                 to="/dashboard"
                 className="block py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0"
               >
-                dashboard
+                Dashboard
               </Link>
             </li>
             <li className="flex items-center">

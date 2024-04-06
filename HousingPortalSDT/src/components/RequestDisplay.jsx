@@ -18,10 +18,10 @@ const RequestDisplay = () => {
                     <div className="h-[100%] w-[40%] flex items-end pb-[5px] pl-[20px]">
                         <p className="text-[15px] font-semibold">Email</p>
                     </div>
-                    <div className="h-[100%] w-[20%] flex items-end pb-[5px] pl-[15px]">
+                    <div className="h-[100%] w-[20%] flex items-end pb-[5px] pl-[45px]">
                         <p className="text-[15px] font-semibold">Property Name</p>
                     </div>
-                    <div className="h-[100%] w-[10%] flex items-end pb-[5px] pl-[8px]">
+                    <div className="h-[100%] w-[10%] flex items-end pb-[5px] pl-[20px]">
                         <p className="text-[15px] font-semibold">Status</p>
                     </div>
                     <div className="h-[100%] w-[30%] "></div>
