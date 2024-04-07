@@ -12,14 +12,20 @@ import ViewGoogleMap from "./pages/wardenPages/ViewGoogleMap";
 import ViewAllProperties from "./pages/wardenPages/ViewAllProperties";
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import Admin from "./pages/adminPages/Admin";
+import UserRegistration from "./pages/adminPages/UserRegistration";
+import ArticleForm from "./pages/adminPages/ArticleForm";
 
 function App() {
+
+
+  
   return (
     <>
       {/* <NavBar /> add like this */}
       <BrowserRouter>
         <Header />
-
+        
         <Routes>
           {/* <Route path = '/home' element = {<Header/>}/> */}
           <Route path="/logedin" element={<Hostels />} />
@@ -32,7 +38,10 @@ function App() {
           <Route path="/editdashboard" element={<Editdashboard />} />
           <Route path="/ArticleView" element={<Article />} />
           <Route path="/Art" element={<Art />} />
-        
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path = "/ArticleForm" element = {<ArticleForm/>}/>
           {/* Add New routes here */}
         </Routes>
 <Footer/>

@@ -50,8 +50,8 @@ const Landlord = () => {
 
     return(
         <div className='h-[90vh] w-[100vw] flex justify-center items-center'>
-            <div className='h-[100%] w-[100%] flex flex-row rounded-[10px] px-[25px]'>
-                <div className='h-[100%] w-[30%] flex flex-col items-center border-r-2 border-r-[#dfdfdf] rounded-[20px]' >
+            <div className='h-[100%] w-[90%] flex flex-row rounded-[10px] px-[25px] items-center justify-center'>
+                <div className='h-[90%] w-[22%] flex flex-col items-center border-2 border-[#dfdfdf] rounded-[20px] mr-[5px] bg-[#F4F4FA]' >
                     {/*For left links */}
                     <p className='mt-[20px] mb-[20px] font-semibold text-[25px]'>Property Management</p>
                     <LandlordLeftLink name= "Student Requests" onclick icon = {LeftIcon2}/>
@@ -59,9 +59,10 @@ const Landlord = () => {
                     <GloButton name = "Register a Property"  />
                     
                 </div>
-                <div className='h-[100%] w-[70%] p-[5px] flex flex-col justify-center items-center'>
+                <div className='h-[90%] w-[70%] p-[5px] border-2 border-[#dfdfdf] rounded-[20px] flex flex-col justify-center items-center ml-[5px] bg-[#F4F4FA]'>
                     {/* <PropertyDisplay properties = {properties}/> */}
                     <RequestDisplay/>
+                    {/* <EmptyRegistration/> */}
                 </div>
             </div>
         </div>
