@@ -4,6 +4,9 @@ import { useParams, useLocation } from 'react-router-dom';
 import BedIcon from "../assets/bed.svg";
 import NavigateIcon from "../assets/navigate-sharp.svg";
 import Container from "../components/container/container";
+import imagemap from "../assets/map.png";
+import ViewMap from '@/components/viewmap';
+
 
 
 
@@ -47,7 +50,7 @@ function ViewProperty() {
             // Merge existing data with new data
             const updatedData = {
                 ...existingPropertyData,
-                isInMap: false
+                isInMap: true
             };
     
             // Send PUT request with updated data
@@ -55,6 +58,7 @@ function ViewProperty() {
                 updatedData,
                 { headers: { 'Authorization': `Bearer ${token}` } } 
             );
+            alert('Property published');
             console.log(response.data);
             fetchProperty();
         } catch (error) {
@@ -77,6 +81,7 @@ function ViewProperty() {
         }
     }
 
+    
     const makeRequest = async () => {
         try {
             const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTBmYTgwZWNlMzYzOGIzODI4MzNhNCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzEyNDE3NDQxfQ.eVPheLaJYkpP0vwr_vmTia-UABHfzOK3LNm21zxMvzE'; 
@@ -125,8 +130,22 @@ return (
                                         <img src={`../../public/uploads/${propertyView.image3}`} className="flex items-center justify-center text-center rounded-[20px] h-[250px] w-[48%]"/>
                                     </div>
                                 </div>
-                                <div className='border border-black w-[50%] mt-3'>
+
+                                    <div className='flex flex-col w-[50%] rounded-lg'>
+                                        <div className='flex flex-col items-center justify-center w-full h-full mt-0 mb- viewMapcard lg:mt-4 rounded-[20px]' style={{backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${imagemap})`, backgroundSize: 'cover'}}>
+                                        <button 
+                                            onClick 
+                                            className='bg-black1 text-white flex py-4 px-6 rounded-[5px] justify-center items-center  hover:text-white hover:border hover:border-white hover:shadow-lg'>
+                                        View Map
+                                        </button>
+                                    </div>
+    
                                 </div>
+
+                                {/* <div className='border border-black w-[50%] mt-3'>
+                                <img src={imagemap} className="w-[100%] h-[100%] "/>
+                                <button className=''>View Map</button>
+                                </div> */}
                             </div>
                             <div className='flex flex-row'>
                                 <div className='w-[800px] mt-10  pr-10 flex flex-col flex-wrap'>
