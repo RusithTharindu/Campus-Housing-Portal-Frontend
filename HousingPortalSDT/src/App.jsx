@@ -11,6 +11,7 @@ import Art from "./pages/landlordPages/Art";
 import ViewGoogleMap from "./pages/wardenPages/ViewGoogleMap";
 import ViewAllProperties from "./pages/wardenPages/ViewAllProperties";
 import Header from "./components/Header";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         
           {/* Add New routes here */}
         </Routes>
+<Footer/>
       </BrowserRouter>
       {/* <Footer/> add like this*/}
     
