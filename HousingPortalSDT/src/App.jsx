@@ -18,7 +18,7 @@ function App() {
     <>
       {/* <NavBar /> add like this */}
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
 
         <Routes>
           {/* <Route path = '/home' element = {<Header/>}/> */}
