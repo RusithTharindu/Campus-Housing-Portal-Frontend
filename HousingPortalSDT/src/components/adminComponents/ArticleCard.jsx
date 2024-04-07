@@ -2,7 +2,7 @@ const ArticleCard = (props) => {
     const {onclick} = props; 
 
     return(
-        <div className="space-y-4 mx-auto border-solid shadow-2xl rounded-[15px] m-5 p-5 w-[100%] border-1 mb-[5%] hover:bg-[#eeeeee] ease-in-out duration-300" onClick={onclick}>
+        <div className="space-y-4 cursor-pointer mx-auto border-solid shadow-2xl rounded-[15px] m-5 p-5 w-[100%] border-1 mb-[5%] hover:bg-[#eeeeee] ease-in-out duration-300" onClick={onclick}>
             <p className="mb-4 text-sm">Nov 10, 2024</p>
             <div className="flex justify-between">
                 <h2 className="text-2xl font-bold">What is Consistency ?</h2>
