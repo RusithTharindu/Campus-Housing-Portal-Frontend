@@ -34,7 +34,7 @@ function ViewGoogleMap() {
             
             {
                 isLoaded ? (
-                    <div className='absolute z-0 w-screen h-screen'>
+                    <div className='absolute z-0 w-screen h-[90%] '>
                             <GoogleMap
                                 mapContainerStyle={{ width: '100%', height: '100%' }}
                                 center={{ lat: lat, lng: lon }}
@@ -70,7 +70,7 @@ function ViewGoogleMap() {
                                     />
 
                             </GoogleMap>
-                            <div className='border absolute z-1 w-1/5 h-1/3 m-2 bg-[#4E4E4E] rounded-[10px] p-[20px] bottom-0 flex flex-col justify-between'>
+                            <div className=' absolute z-1 w-1/5 h-1/3 m-2 bg-[#4E4E4E] rounded-[10px] p-[20px] bottom-0 flex flex-col justify-between'>
                                 <div className=" w-[100%]">
                                     <h1 className='text-[#fff] font-[10px] text-xl'>Set Your Hostel Location</h1>
                                     <p className='text-[#fff] text-[11px] font-light'>Please Drag and drop the Red Marker to your hostel Location.</p>

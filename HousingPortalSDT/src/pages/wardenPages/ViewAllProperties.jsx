@@ -12,20 +12,20 @@ import GreenLocation from "../../../public/markerImages/greenLocation.png";
 import MapPropertyCard from "@/components/MapPropertyCard";
 import axios from "axios";
 import { cn } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
-
-// import { useAuthContext } from "@/hooks/useAuthContext";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function ViewAllProperties() {
   const navigation = useNavigate();
-  // const { user } = useAuthContext();
+  const location = useLocation();
+  const { role, email } = location.state || {};
+
   const [properties, setProperties] = useState([]);
   const [directions, setDirections] = useState(null);
   const [response, setResponse] = useState(null);
   const [getId, setGetId] = useState(null);
   const [propertyView, setPropertyView] = useState(null);
 
-  const userRole = "student";
+  const userRole = role;
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
@@ -125,9 +125,9 @@ function ViewAllProperties() {
   }, []);
 
   return (
-    <div className="absolute z-0 w-screen h-screen ">
+    <div className="absolute z-0 w-screen h-[90%] ">
       {isLoaded ? (
-        <div className="absolute z-0 w-screen h-screen">
+        <div className="absolute z-0 w-screen h-[100%]">
           <GoogleMap
             mapContainerStyle={{ width: "100%", height: "100%" }}
             center={{ lat: 6.824265618550028, lng: 80.04001213226317 }}
@@ -171,7 +171,7 @@ function ViewAllProperties() {
 
             {directions && <DirectionsRenderer directions={directions} />}
           </GoogleMap>
-          <div className="absolute z-1 w-1/4 h-[98vh] m-2 bg-[#fafafa] p-[10px] bottom-0 overflow-scroll flex items-center flex-col">
+          <div className="absolute z-1 w-1/4 h-[90%] m-2 bg-[#fafafa] p-[10px] bottom-0 overflow-scroll flex items-center flex-col">
             {properties.map((property) => (
               <MapPropertyCard
                 pTitle={property.title}
@@ -181,7 +181,9 @@ function ViewAllProperties() {
                 mainImage={property.image1}
                 onClick={() => {
                   setPropertyView(property);
-                  navigation(`/property/${property._id}`);
+                  navigation(`/property/${property._id}`, {
+                    state: { userRole, email },
+                  });
                 }}
               />
             ))}
@@ -198,19 +200,33 @@ function ViewAllProperties() {
                   <h1 className="text-[#000] text-[20px] font-bold p-[10px]">
                     {propertyView.title}
                   </h1>
-                  <p className="text-[#000] text-[15px] font-poppins p-[10px]">
-                    Rs.30000
-                  </p>
-                  <p className="text-[#000] text-[15px] font-poppins p-[10px]">
-                    Property Price
-                  </p>
-                  <p className="text-[#000] text-[15px] font-poppins p-[10px]">
-                    Property Status
-                  </p>
+                  <div className="flex items-center justify-start ">
+                    <p className="text-[#000] text-[15px] font-poppins p-[10px]">
+                      Rs.30000
+                    </p>
+                    <span className="text-[#bbb] text-[15px]">
+                      {"( Per Person )"}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-start ">
+                    <p className="text-[#000] text-[15px] font-poppins p-[10px]">
+                      {propertyView.availableRooms} Rooms Available
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-end justify-center ">
+                    <p className="text-[#4879C2] text-[15px] font-poppins p-[10px]">
+                      Published On
+                    </p>
+                    <span className="text-[#bbb] text-[15px]">
+                      {propertyView.date}
+                    </span>
+                  </div>
                 </div>
                 <button
                   onClick={() => {
-                    navigation(`/property/${propertyView._id}`);
+                    navigation(`/property/${propertyView._id}`, {
+                      state: { userRole, email },
+                    });
                   }}
                   className="w-[100%] bg-[#4541FD] text-[#fff]  h-[40px] rounded-[10px] hover:bg-[#4441fdd4] ease-in-out duration-200"
                 >

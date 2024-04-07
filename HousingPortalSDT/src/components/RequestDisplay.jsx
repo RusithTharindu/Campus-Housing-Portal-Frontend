@@ -2,7 +2,7 @@ import StuRequestDetails from "./StuRequestDetails";
 
 const RequestDisplay = () => {
     return(
-        <div className=" w-[95%] h-[90%] border border-[#dfdfdf] rounded-xl px-5 py-10">
+        <div className=" w-[95%] h-[90%] border border-[#dfdfdf] rounded-xl px-5 py-10 bg-[#F6F6F6]">
             <p className="text-[15px]">Student Requests</p>
             <div className="flex flex-row justify-between items-centers">
                 <select name="properties" className="h-[50px] w-[300px] bg-[#F6F6F6] text-[25px] font-semibold border-0">
@@ -18,10 +18,10 @@ const RequestDisplay = () => {
                     <div className="h-[100%] w-[40%] flex items-end pb-[5px] pl-[20px]">
                         <p className="text-[15px] font-semibold">Email</p>
                     </div>
-                    <div className="h-[100%] w-[20%] flex items-end pb-[5px] pl-[15px]">
+                    <div className="h-[100%] w-[20%] flex items-end pb-[5px] pl-[45px]">
                         <p className="text-[15px] font-semibold">Property Name</p>
                     </div>
-                    <div className="h-[100%] w-[10%] flex items-end pb-[5px] pl-[8px]">
+                    <div className="h-[100%] w-[10%] flex items-end pb-[5px] pl-[20px]">
                         <p className="text-[15px] font-semibold">Status</p>
                     </div>
                     <div className="h-[100%] w-[30%] "></div>

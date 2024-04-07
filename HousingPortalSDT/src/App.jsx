@@ -10,15 +10,18 @@ import Article from "./pages/landlordPages/Article";
 import Art from "./pages/landlordPages/Art";
 import ViewGoogleMap from "./pages/wardenPages/ViewGoogleMap";
 import ViewAllProperties from "./pages/wardenPages/ViewAllProperties";
-import Directons from "./pages/wardenPages/Directons";
 import Header from "./components/Header";
+import Footer from "./components/footer";
+import Admin from "./pages/adminPages/Admin";
+import UserRegistration from "./pages/adminPages/UserRegistration";
+import ArticleForm from "./pages/adminPages/ArticleForm";
 
 function App() {
   return (
     <>
       {/* <NavBar /> add like this */}
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
 
         <Routes>
           {/* <Route path = '/home' element = {<Header/>}/> */}
@@ -32,12 +35,15 @@ function App() {
           <Route path="/editdashboard" element={<Editdashboard />} />
           <Route path="/ArticleView" element={<Article />} />
           <Route path="/Art" element={<Art />} />
-          <Route path="/directions" element={<Directons />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path="/ArticleForm" element={<ArticleForm />} />
           {/* Add New routes here */}
         </Routes>
+        <Footer />
       </BrowserRouter>
       {/* <Footer/> add like this*/}
-      );
     </>
   );
 }

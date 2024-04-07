@@ -6,6 +6,7 @@ import Form from "../../components/form";
 import SelectedImageUpload from "@/components/selectedimageupdate";
 import axios from 'axios';
 import { useLocation, useNavigate } from "react-router-dom";
+import Footer from "@/components/footer";
 
 const Editdashboard = () => {
 const navigation =  useNavigate();
@@ -71,11 +72,11 @@ const handleSubmit = async (e) => {
     }
 };
   return (
+    <>
     <Container>
-      <div className="flex flex-row">
-        <div className="hidden lg:flex lg:w-[300px] lg:-ml-40 mr-20 border">
-          side bar
-        </div>
+      <h1 className="text-[25px] font-semibold text-black1 mb-10">Property Registration Form</h1>  
+      <div className="flex flex-row ">
+      
         <div className="flex-grow">
           <div className="flex flex-col justify-between gap-6">
             <div className="flex flex-row gap-6">
@@ -96,11 +97,11 @@ const handleSubmit = async (e) => {
               setFormData={setFormData}
 
             />
-
           </div>
         </div>
       </div>
     </Container>
+    </>
   );
 };
 

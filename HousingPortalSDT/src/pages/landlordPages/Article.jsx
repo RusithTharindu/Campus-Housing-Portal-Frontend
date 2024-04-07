@@ -3,15 +3,16 @@ import React from "react";
 const Article = () => {
   return (
     <div>
-      <div className="flex space-x-2 ml-[7%] pl-12 pt-8">
+      {/* <div className="flex space-x-2 ml-[7%] pl-12 pt-8">
         <div className="hover:text-blue-500 text-sm">
           <button>dashboard</button>
         </div>
+        <div className=" text-grey1"><h1>{">"}</h1></div>
         <div className="text-blue-500 text-sm hover:text-black">
           <button>All users</button>
         </div>
-      </div>
-      <div className=" mx-auto border-solid  shadow-2xl rounded-lg m-5  p-5 pt w-[70%] border-1 mb-[5%]">
+      </div> */}
+      <div className="mx-auto border-solid shadow-2xl rounded-[15px] m-5 p-5 pt w-[70%] border-1 mb-[5%]">
         <div class="flex justify-between">
           <div>
             {" "}
