@@ -19,8 +19,8 @@ const Admin = () => {
                     <LandlordLeftLink name= "Articles" onclick icon = {articlepng}/>
                 </div>
                 <div className='h-[90%] w-[70%] p-[5px] flex flex-col justify-center items-center border-2 border-[#dfdfdf] rounded-[20px] ml-[5px] bg-[#F4F4FA]'>
-                    <UserDisplay/>
-                    {/* <ArticleCardDisplay/> */}
+                    {/* <UserDisplay/> */}
+                    <ArticleCardDisplay/>
                 </div>
             </div>
         </div>
