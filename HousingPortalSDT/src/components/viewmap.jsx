@@ -1,19 +1,22 @@
-import React from "react";
+import React from 'react';
+import mapImage from '../assets/map.png'; 
 
+const ViewMap = ({onClick}) => {
 
-const viewmap = () => {
   return (
-    <div className=" flex flex-col w-full ">
-      <div className="viewMapcard border flex flex-col justify-center items-center w-full border-green-600 h-[300px] mt-0 lg:mt-4 mb-4 lg:h-[585px]">
-        <button className="bg-black1 text-white flex py-4 px-6 rounded-[5px] justify-center items-center hover:bg-lightGrey hover:text-white hover:border hover:border-white">
-          view Map
+    <div className='flex flex-col w-full rounded-lg'>
+      <div className='flex flex-col items-center justify-center w-full h-full mt-0 mb- viewMapcard lg:mt-4 rounded-[20px]' style={{backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${mapImage})`, backgroundSize: 'cover'}}>
+        <button 
+            onClick = {onClick}
+            className='bg-black1 text-white flex py-4 px-6 rounded-[5px] justify-center items-center  hover:text-white hover:border hover:border-white hover:shadow-lg'>
+          View Map
         </button>
       </div>
-      <div className=" flex flex-row items-end text-end justify-end ">
-        <p className=" text-grey1">location</p>
+      <div className='flex flex-row items-end justify-end text-end'>
+        <p className="mt-4 text-grey1">location</p>
       </div>
     </div>
   );
 };
 
-export default viewmap;
+export default ViewMap;
