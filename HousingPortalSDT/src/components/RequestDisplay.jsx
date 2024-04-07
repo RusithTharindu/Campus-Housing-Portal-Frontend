@@ -2,7 +2,7 @@ import StuRequestDetails from "./StuRequestDetails";
 
 const RequestDisplay = () => {
     return(
-        <div className=" w-[95%] h-[90%] border border-[#dfdfdf] rounded-xl px-5 py-10">
+        <div className=" w-[95%] h-[90%] border border-[#dfdfdf] rounded-xl px-5 py-10 bg-[#F6F6F6]">
             <p className="text-[15px]">Student Requests</p>
             <div className="flex flex-row justify-between items-centers">
                 <select name="properties" className="h-[50px] w-[300px] bg-[#F6F6F6] text-[25px] font-semibold border-0">

@@ -13,6 +13,8 @@ import ViewAllProperties from "./pages/wardenPages/ViewAllProperties";
 import Header from "./components/Header";
 import Footer from "./components/footer";
 import Admin from "./pages/adminPages/Admin";
+import UserRegistration from "./pages/adminPages/UserRegistration";
+import ArticleForm from "./pages/adminPages/ArticleForm";
 
 function App() {
 
@@ -37,6 +39,9 @@ function App() {
           <Route path="/ArticleView" element={<Article />} />
           <Route path="/Art" element={<Art />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path="/userRegistration" element={<UserRegistration />} />
+          <Route path = "/ArticleForm" element = {<ArticleForm/>}/>
           {/* Add New routes here */}
         </Routes>
 <Footer/>
