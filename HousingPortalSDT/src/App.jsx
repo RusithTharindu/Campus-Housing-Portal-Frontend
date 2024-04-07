@@ -17,15 +17,12 @@ import UserRegistration from "./pages/adminPages/UserRegistration";
 import ArticleForm from "./pages/adminPages/ArticleForm";
 
 function App() {
-
-
-  
   return (
     <>
       {/* <NavBar /> add like this */}
       <BrowserRouter>
         <Header />
-        
+
         <Routes>
           {/* <Route path = '/home' element = {<Header/>}/> */}
           <Route path="/logedin" element={<Hostels />} />
@@ -41,13 +38,12 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/userRegistration" element={<UserRegistration />} />
           <Route path="/userRegistration" element={<UserRegistration />} />
-          <Route path = "/ArticleForm" element = {<ArticleForm/>}/>
+          <Route path="/ArticleForm" element={<ArticleForm />} />
           {/* Add New routes here */}
         </Routes>
-<Footer/>
+        <Footer />
       </BrowserRouter>
       {/* <Footer/> add like this*/}
-    
     </>
   );
 }

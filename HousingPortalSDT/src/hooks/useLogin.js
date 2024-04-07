@@ -17,7 +17,7 @@ export const useLogin = () => {
     });
     const json = await response.json();
 
-    console.log(json.token);
+    console.log(json);
 
     if (!response.ok) {
       setError(json.error);
