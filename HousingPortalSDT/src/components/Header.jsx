@@ -61,41 +61,44 @@ function Header() {
         >
           <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li className="flex items-center ">
-              <img
+              
+              <Link
+                to="/dashboard"
+                className=" py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0 flex items-center"
+              >
+                <img
                 src="src/assets/assets/filledhome.png"
                 className="w-5 h-5 mr-1"
                 alt="filledhouse"
               />
-              <Link
-                to="/dashboard"
-                className="block py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0"
-              >
                 Dashboard
               </Link>
             </li>
             <li className="flex items-center">
-              <img
+              
+              <Link
+                to="/viewAllProperties"
+                className=" py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0 flex items-center"
+              >
+                <img
                 src="src/assets/assets/Bed.png"
                 className="w-5 h-5 mr-1"
                 alt="filledhouse"
               />
-              <Link
-                to="/hostels"
-                className="block py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0"
-              >
                 Hostels
               </Link>
             </li>
             <li className="flex items-center">
-              <img
+              
+              <Link
+                to="/Art"
+                className=" py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0 flex"
+              >
+                <img
                 src="src/assets/assets/Page.png"
-                className="w-5 h-5 mr-1"
+                className="w-5 h-5 mr-1 hover:filter-[#6DFFB9]"
                 alt="filledhouse"
               />
-              <Link
-                to="/articles"
-                className="block py-2 px-3 rounded font-poppins text-white hover:bg-white hover:text-black md:hover:bg-transparent md:hover:text-[#6DFFB9] md:p-0"
-              >
                 Articles
               </Link>
             </li>

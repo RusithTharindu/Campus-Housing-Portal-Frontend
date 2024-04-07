@@ -9,7 +9,6 @@ module.exports = {
   ],
   prefix: "",
   theme: {
-
     container: {
       center: true,
       padding: "2rem",
@@ -95,6 +94,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-
-
-
