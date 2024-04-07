@@ -22,6 +22,8 @@ const Landlord = () => {
     const [properties, setProperties] = useState([]);
     const { role, email } = location.state || {};
 
+    const navigator = useNavigate();
+
     const getMyProperties = async () => {
         try {
             const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTBlNGFlY2U3OWY2NjQwYmM4YjQ0MiIsInJvbGUiOiJwcm9wZXJ0eU93bmVyIiwiaWF0IjoxNzEyMzk3MDg5fQ.zaStkP0MCKJxlVDdIPK9iXX1xJb8f7m8Su2XTcQyKP0';
@@ -56,13 +58,13 @@ const Landlord = () => {
                     <p className='mt-[20px] mb-[20px] font-semibold text-[25px]'>Property Management</p>
                     <LandlordLeftLink name= "Student Requests" onclick icon = {LeftIcon2}/>
                     <LandlordLeftLink name= "Registered Properties" onclick icon = {LeftIcon1}/>
-                    <GloButton name = "Register a Property"  />
+                    <GloButton name = "Register a Property" onclick = {() => {navigator('/editdashboard')}} />
                     
                 </div>
                 <div className='h-[90%] w-[70%] p-[5px] border-2 border-[#dfdfdf] rounded-[20px] flex flex-col justify-center items-center ml-[5px] bg-[#F4F4FA]'>
                     {/* <PropertyDisplay properties = {properties}/> */}
-                    <RequestDisplay/>
-                    {/* <EmptyRegistration/> */}
+                    {/* <RequestDisplay/> */}
+                    <EmptyRegistration/>
                 </div>
             </div>
         </div>
